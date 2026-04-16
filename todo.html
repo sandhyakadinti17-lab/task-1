@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    
+    , initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        .container {
+            background-color: #ffff;
+            border-radius: 10px;
+            box-shadow: 3 0 10px white;
+            width: 500px;
+            height: 450px;
+            margin: auto;
+            margin-top: 150px;
+            border: 2px solid whitesmoke;
+
+        }
+
+        input {
+            margin: auto;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            width: 350px;
+            height: 25px;
+            text-align: center;
+            margin-left: 50px;
+
+        }
+
+        h2 {
+            text-align: center;
+
+        }
+
+        .button {
+            background-color: rgb(100, 240, 100);
+            width: 45px;
+            border-radius: 5px;
+            border: none;
+            padding: 10px 5px;
+            margin-left: 5px;
+            cursor: pointer;
+            border-top: none;
+        }
+
+        btn:hover {
+            background: #072609;
+        }
+    </style>
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Todo App</h2>
+        <div>
+            <input type="text" id="search-bar" placeholder="Enter a task">
+            <button id="add-btn" class="button"> ADD</button>
+        </div>
+
+        <div id="listContainer">
+
+        </div>
+
+
+    </div>
+    <script>
+        const addBtn = document.getElementById("add-btn");
+        const listContainer = document.getElementById("listContainer")
+        const input = document.getElementById("search-bar")
+        let tasks = [];
+        addBtn.addEventListener("click", () => {
+            const text = input.value.trim();
+
+            if (text === "") return null;
+            if (tasks.includes(text)) {
+                return null;
+            }
+            tasks.push(text);
+            Tasks();
+            input.value = "";
+        });
+     function Tasks() {
+            listContainer.innerHTML = "";
+            tasks.forEach((task) => {
+                const li = document.createElement("li");
+                li.textContent = task;
+                listContainer.appendChild(li);
+            });
+     }
+    </script>
+</body>
+    </script>
+
+</body>
+
+</html>
+
+
+</body>
+</html>
